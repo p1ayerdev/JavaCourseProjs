@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class CompoundInterest {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        double principal;
+        double rate;
+        int timesCompounded;
+        int years;
+        double amount;
+        double InterestGained;
+
+        System.out.print("Enter the principal amount: ");
+        principal = input.nextDouble();
+
+        System.out.print("Enter the interest rate (in %): ");
+        rate = input.nextDouble() / 100;
+
+        System.out.print("Enter the number of times compounded per year: ");
+        timesCompounded = input.nextInt();
+
+        System.out.print("Enter the number of years: ");
+        years = input.nextInt();
+
+        amount = principal * Math.pow(1 + rate / timesCompounded, timesCompounded * years);
+        System.out.printf("The value of the account after %d years is: £%.2f\n",years, amount);
+        InterestGained = amount - principal;
+        System.out.printf("You have gained £%.2f pounds of value in %s years.", InterestGained, years);
+
+
+        input.close();
+    }
+}
